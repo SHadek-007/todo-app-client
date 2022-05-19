@@ -1,0 +1,23 @@
+.login-container{
+    max-width: 40%;
+    border: 1px solid #FF5400;
+    margin: 30px auto;
+}
+.log-bg{
+    background-color: #FF5400;
+}
+@media only screen and (max-width:576px) {
+    .login-container{
+        max-width: 95%;
+    }
+}
+@media only screen and (min-width:577px) and (max-width:768px){
+    .login-container{
+        max-width: 80%;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:992px){
+    .login-container{
+        max-width: 80%;
+    }
+}

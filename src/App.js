@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import TodoAdd from './Pages/TodoAdd/TodoAdd';
+import TodoList from './Pages/TodoList/TodoList';
+import Header from './Pages/Header/Header';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header></Header>
+      <Routes>
+        <Route path='/' element={<RequireAuth><TodoAdd></TodoAdd></RequireAuth>}></Route>
+        <Route path='todoList' element={<TodoList></TodoList>}></Route>
+        <Route path='login' element={<Login/>}></Route>
+        <Route path='register' element={<Register/>}></Route>
+      </Routes>
     </div>
   );
 }
